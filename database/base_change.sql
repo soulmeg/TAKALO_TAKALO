@@ -5,7 +5,7 @@ use e_change;
 create table user(
     id_user int primary key auto_increment,
      user_name varchar(30),
-     user_emai varchar(30),
+     user_email varchar(30),
      user_pwd varchar(30),
      est_admin boolean
 );
