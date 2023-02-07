@@ -20,7 +20,7 @@ create table objet(
      id_user int,
      id_categorie int,
     description_text varchar(1000),
-    prix float ,
+    prix decimal ,
 
     foreign key (id_user) references user(id_user),
     foreign key (id_categorie) references categorie(id_categorie) 
@@ -56,10 +56,10 @@ create table confirmation(
 );
 
 
-insert into user values(null,'Megane','megane@gmail.com','meg','true');
-insert into user values(null,'Mitantsoa','mmitantsoa@gmail.com','mita','true');
-insert into user values(null,'Antonio','antonio@gmail.com','okey','false');
-insert into user values(null,'Tsiresy','tsiresy@gmail.com','tsix','false');
+insert into user values(null,'Megane','megane@gmail.com','meg',true);
+insert into user values(null,'Mitantsoa','mmitantsoa@gmail.com','mita',true);
+insert into user values(null,'Antonio','antonio@gmail.com','okey',false);
+insert into user values(null,'Tsiresy','tsiresy@gmail.com','tsix',false);
 
 insert into categorie values(null,'vetement');
 insert into categorie values(null,'mobilier');
@@ -72,5 +72,8 @@ insert into objet values(null,2,3,'smartphone samsung(galaxy s7)',105.7);
 insert into objet values(null,1,4,'filtre a essence(Bmw x5)',57.4);
 insert into objet values(null,1,1,'blouson adidas(couleur noir et de bande blanche)',43.9);
 insert into objet values(null,2,2,'ciment(2 ciment holcim)',76.1);
-insert into objet values(null,3,3,'USB(lenovo 64GB)',25.2);
-insert into objet values(null,4,4,'echapment (v8 4T)',43.8);
+insert into objet values(null,3,3,'USB(lenovo 64GB)',25.2); (v8 4T)',43.8);
+
+
+
+
