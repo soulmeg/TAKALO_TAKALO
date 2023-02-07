@@ -7,17 +7,25 @@ class Login extends CI_Controller {
     {  
         $this->load->view('Login');  
     }  
+
+    public function signin()  
+    {  
+        $this->load->view('SignIn');  
+    }  
     
+  
     public function process()  
     {  
+        $data=array();
         $user = $this->input->post('user');  
         $pass = $this->input->post('pass');  
-        if ($user=='megane' && $pass=='meg')   
+        $data=$this->user->verifUser($user,$pass);
+        if (count($data) == 1)   
         {  
             //declaring session  
             $this->load->library('session');
             $this->session->set_userdata(array('user'=>$user));  
-            $this->load->view('welcome_view');  
+            redirect('control_acceuil/allUtilisateur');       
         }  
         else{  
             $data['error'] = 'Your Account is Invalid';  

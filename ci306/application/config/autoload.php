@@ -133,7 +133,7 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('liste_client');
+$autoload['model'] = array('user');
 
 
 $autoload['helper']=array('url','html','file');
