@@ -26,7 +26,11 @@
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="#">Acceuil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<>">Liste de mes objets</a></li>
+                        <?php $data=$this->session->userdata('user'); ?>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Liste de mes objets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Liste des objets echangeable</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Mes propositions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Categorie_controller');?>">Gestion de categories</a></li>
                         <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">About</a>
                             <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#" style="/*font-size: 14px;*//*font-family: cursive;*/">Third Item</a></div>
                         </li>

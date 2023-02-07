@@ -9,14 +9,27 @@ class Categorie_model extends CI_Model{
     }
 
     public function update_categorie($id_categorie, $nom_categorie){
-        $sql = "UPDATE categorie SET nom_categorie = %s WHERE id_categorie = %s";
-        $sql = sprintf($sql, $this->db->escape($nom_categorie), $this->db->escape($id_categorie));
+        $sql = "UPDATE categorie SET nom_categorie = %s WHERE id_categorie = $id_categorie";
+        $sql = sprintf($sql, $this->db->escape($nom_categorie));
         $this->db->query($sql);
     }
 
-    public function get_categories(){
-        $sql = "SELECT * FROM categorie";
-        $query = $this->db->query($sql);
-        return $query->result_array();
+    public function get_categories($id_categorie){
+        $sql = null ;
+        if($id_categorie == null){
+            $sql = "SELECT * FROM categorie";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+        else{
+            $sql = "SELECT * FROM categorie WHERE id_categorie = $id_categorie";
+            $query = $this->db->query($sql);
+            return $query->row_array(); 
+        }  
+    }
+
+    public function delete_categorie($id_categorie){
+        $sql = "DELETE FROM categorie WHERE id_categorie = $id_categorie";
+        $this->db->query($sql);        
     }
 }

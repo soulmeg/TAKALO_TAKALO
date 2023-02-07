@@ -84,13 +84,6 @@ insert into objet values(null,3,3,'USB(lenovo 64GB)',25.2);
 insert into objet values(null,4,4,'echapment (v8 4T)',43.8);
 
 
-
-
-
-
-
-
-
 -- TENA IZYYYYYYYYY
 create or replace view photo_par_user as
 select objet.id_user,photo.nom_photo

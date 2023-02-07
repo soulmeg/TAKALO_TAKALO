@@ -27,7 +27,7 @@ class Login extends CI_Controller {
             $this->session->set_userdata('user',$data);  
             $tt='control_acceuil/allUtilisateur/'.$data[0]['id_user'];
             var_dump($tt);
-            redirect('control_acceuil/allUtilisate8ur/'.$data[0]['id_user']);       
+            redirect('control_acceuil/allUtilisateur/'.$data[0]['id_user']);       
         }  
         else{  
             $data['error'] = 'Your Account is Invalid';  

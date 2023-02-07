@@ -11,17 +11,17 @@
 </head>
 
 <body>
-Welcome <?php 
+<?php 
 $data=array();
 $objets=array();
 
 $data=$this->session->userdata('user');
-var_dump($data[0]['user_name']); 
 
 ?>   
 <br>  
     <main class="page projects-page">
         <section class="portfolio-block projects-cards">
+          
             <div class="container">
                 <div class="heading">
                     <h2 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-top:60px;margin-bottom:60px">LISTE DE MES OBJETS</h2>

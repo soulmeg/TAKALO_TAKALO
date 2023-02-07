@@ -8,9 +8,7 @@ class control_acceuil extends CI_Controller {
         $this->load->view('Login');  
     }  
 
-
     public function allUtilisateur($id){
-        $id=4;
         $data = array();
         $data['liste']=$this->Objet_model->getMyObject($id);
 		$data['contents']='mesObjets';
