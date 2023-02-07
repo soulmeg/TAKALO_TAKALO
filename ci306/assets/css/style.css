@@ -1,0 +1,22 @@
+#menu{
+    background-color: #343a40;
+}
+
+#entete{
+    background-color: #e9ecef;
+}
+
+#liste{
+    margin-top: 20px;
+}
+
+#nom{
+    font-weight: bolder;
+    padding-left: 45%;
+}
+
+#footer{
+    margin-top: 20px;
+    background-color:#343a40;
+    color:#337ab7;
+}

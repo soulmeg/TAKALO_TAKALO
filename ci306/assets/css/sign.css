@@ -1,0 +1,78 @@
+body{
+    background-color: #e4e3ee;
+    font-family: sans-serif;
+    background-size: cover;
+}
+
+/* Sign in css */
+#sign_in{
+    margin:145px auto 0;
+    width: 500px;
+    height: 215px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 22px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+}
+
+p{
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 55px;
+    color: #5f5f5f;
+}
+
+div.date{
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.placeholder{
+    height:45px;
+}
+
+.place{
+    margin-top: 70px;
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="password"]{
+    height: 25px;
+    width: 185px;
+    border: none;
+    width:390px;
+    color:black;
+    border-bottom: 2px solid #3b3b3b;
+    outline: none;
+    background-color: rgba(255,160,201,-1.5);
+}
+::placeholder{
+    color: black;
+}
+
+input[type="submit"]{   
+    width: 190px;
+    height: 26px;
+    border-color: floralwhite;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #c9cdd5;
+}
+
+input[type="submit"]:hover{
+    color: #62656a;
+    background-color: #222222;
+    transition:0.1s;
+    border-radius: 0px;
+}
+
+h1{
+    color: #4f4f4f;
+}
+
+#submit{
+    margin-top: 10px;
+}
+/*End of the sign in css*/
+/*Header*/
+/*end of header*/
+/*post*/

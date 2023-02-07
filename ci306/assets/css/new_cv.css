@@ -1,0 +1,36 @@
+body{
+    /* background-color: #c6bdab; */
+    font-family:cursive;
+    background-size: cover;
+}
+html{
+    width: 320px;
+    margin: auto;
+    margin-top: 101px;
+}
+.placeholder{
+    height: 74px;
+}
+input[type="submit"]{   
+    width: 190px;
+    height: 30px;
+    border-color: #c6bdab;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #020305;
+    margin-top: -6px;
+}
+
+input[type="text"], input[type="date"]{
+    height: 30px;
+    border-radius: 8px;
+    border-color: currentColor;
+}
+#middle{
+    width: 411px;
+    height: 438px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 22px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+}
