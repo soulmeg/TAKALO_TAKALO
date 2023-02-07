@@ -133,7 +133,7 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('objet_model');
+$autoload['model'] = array('objet_model,categorie_model,user_model,photo_model,echange_model');
 
 
 $autoload['helper']=array('url','html','file');
