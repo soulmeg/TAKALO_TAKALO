@@ -1,1 +1,3 @@
-<?php 
+<?php foreach($categories ) : ?>
+
+ <?php endforeach ?>
