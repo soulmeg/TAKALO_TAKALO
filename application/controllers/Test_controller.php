@@ -5,8 +5,7 @@ class Test_controller extends CI_Controller{
 
     public function index(){
         $this->load->model('user_model');
-        $this->user_model->inscription("bobo","bobo@gmail.com","123");
-        
+        $this->user_model->inscription('bobo','bobo@gmail.com','123');
     }
 }
 ?>

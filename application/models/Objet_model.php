@@ -20,7 +20,7 @@ class Objet_model extends CI_Model{
     }
 
     public function update_objets($id_objet, $description, $prix){
-        $sql = "UPDATE objet SET description_text ='%s' AND prix = %d WHERE id_objet = %d" ;
+        $sql = "UPDATE objet SET description_text =%s AND prix = %d WHERE id_objet = %d" ;
         $sql = sprintf($sql, $this->db->escape($description), $this->db->escape($prix), $this->db->escape($id_objet));
         $this->db->query($sql);
     }
@@ -45,12 +45,13 @@ class Objet_model extends CI_Model{
 
     public function insert_objet($id_user, $id_categorie, $description_text, $prix){
         $sql = "INSERT INTO objet VALUES (id_user, id_categorie, description_text, prix) 
-        VALUES (%d, %d, '%s', %d)";
+        VALUES (%d, %d, %s, %d)";
 
         $sql = sprintf($sql,
         $this->db->escape($id_user), 
         $this->db->escape($id_categorie), 
         $this->db->escape($description_text),
+ 
         $this->db->escape($prix));
 
         $this->db->query($sql);

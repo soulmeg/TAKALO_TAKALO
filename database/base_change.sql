@@ -74,3 +74,11 @@ insert into objet values(null,1,1,'blouson adidas(couleur noir et de bande blanc
 insert into objet values(null,2,2,'ciment(2 ciment holcim)',76.1);
 insert into objet values(null,3,3,'USB(lenovo 64GB)',25.2);
 insert into objet values(null,4,4,'echapment (v8 4T)',43.8);
+
+
+//view
+create or replace view v_echange_notif as 
+select id_objet_choix, objet.id_user as id_user_proprio, id_objet_echange 
+from echange 
+join objet on 
+objet.id_objet = id_objet_choix ;       
