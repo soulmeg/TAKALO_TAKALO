@@ -5,9 +5,9 @@ class Login extends CI_Controller {
       
     public function index()  
     {  
-        $this->load->view('login_view');  
+        $this->load->view('Login');  
     }  
-
+    
     public function process()  
     {  
         $user = $this->input->post('user');  
@@ -21,7 +21,7 @@ class Login extends CI_Controller {
         }  
         else{  
             $data['error'] = 'Your Account is Invalid';  
-            $this->load->view('login_view', $data);  
+            $this->load->view('Login', $data);  
         }  
     }  
     
