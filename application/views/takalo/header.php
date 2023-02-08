@@ -35,7 +35,7 @@
                     <?php }
                     if($data[0]['est_admin']=='1') {?>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Categorie_controller');?>">Gestion de categories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Categorie_controller/get_form_insert');?>">Ajout categorie</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/add_categorie');?>">Ajout categorie</a></li>
                         <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="">Statistique</a>
                         <div class="dropdown-menu"><a class="dropdown-item" href="<?php echo base_url('verifAdmin_controller/nbr_utilisateur');?>">Nombre d'user</a>
                         <a class="dropdown-item" href="<?php echo base_url('verifAdmin_controller/echange_effectue');?>">Nombre d'echange effectuer</a>

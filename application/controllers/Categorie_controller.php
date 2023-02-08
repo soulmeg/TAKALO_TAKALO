@@ -34,7 +34,7 @@ class Categorie_controller extends CI_Controller{
 
     public function insert(){
         $nom_categorie = $this->input->post('categorie_name');
-        $this->categorie_model->insert_categorie($nom_categorie);
+        $this->Categorie_model->insert_categorie($nom_categorie);
         redirect("categorie_controller");
     }
 
