@@ -16,6 +16,18 @@ class control_acceuil extends CI_Controller {
         // var_dump($data);
 		$this->load->view('takalo/template',$data);
     }
+
+    public function notmyObject($id){
+        $data = array();
+        $data['liste']=$this->Objet_model->getNotMyObject($id);
+        // var_dump($data['liste']);
+		$data['contents']='mesNonObjets';
+        // $data['photos']=$this->Objet_model->getPhotoParUser($id);
+        // var_dump($data);
+		$this->load->view('takalo/template',$data);
+    }
+
+
 }  
 ?>
   

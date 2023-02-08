@@ -133,7 +133,7 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('user','User_model','Objet_model','Categorie_model');
+$autoload['model'] = array('verifAdmin','user','User_model','Objet_model','Categorie_model');
 
 
 $autoload['helper']=array('url','html','file');

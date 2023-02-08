@@ -20,7 +20,18 @@ class Objet_model extends CI_Model{
         return $objets;
     }
 
+    public function getNotMyObject($id){
+        $objets=array();
+        $sql = "SELECT * FROM notMyObject WHERE id_user != %d";
+        $sql = sprintf($sql, $this->db->escape($id));
+        // var_dump($sql);
+        $query = $this->db->query($sql);
+        $objets =  $query->result_array();
+        return $objets;
+    }
+
     public function getMyObject($id){
+        $id=4;
         $objets=array();
         $this->db->select('*');
         $this->db->from('liste_objet');
@@ -39,6 +50,8 @@ class Objet_model extends CI_Model{
         $row = $query->result_array();
         return $row;
     }
+
+
 
     public function update_objets($id_objet, $description, $prix){
         $sql = "UPDATE objet SET description_text =%s AND prix = %d WHERE id_objet = %d" ;

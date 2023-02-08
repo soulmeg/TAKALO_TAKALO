@@ -22,22 +22,26 @@
 <body>
     <header class="header-blue">
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-            <div class="container-fluid"><a class="navbar-brand" href="#">Projet S3</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container-fluid"><a class="navbar-brand" href="#">TAKALO-TAKALO</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav">
                         <!-- <li class="nav-item"><a class="nav-link" href="#">Acceuil</a></li> -->
-                        <?php $data=$this->session->userdata('user'); ?>
+                        <?php $data=$this->session->userdata('user'); 
+                        if($data[0]['est_admin']=='0'){?>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Liste de mes objets</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Liste des objets echangeable</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/notmyObject/'.$data[0]['id_user']);?>">Liste des objets echangeable</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Mes propositions</a></li>
                     
-                    <?php 
+                    <?php }
                     if($data[0]['est_admin']=='1') {?>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('Categorie_controller');?>">Gestion de categories</a></li>
-                    <?php } ?>
-                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">About</a>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#" style="/*font-size: 14px;*//*font-family: cursive;*/">Third Item</a></div>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="">Statistique</a>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="<?php echo base_url('verifAdmin_controller/nbr_utilisateur');?>">Nombre d'user</a>
+                            <a class="dropdown-item" href="<?php echo base_url('verifAdmin_controller/echange_effectue');?>">Nombre d'echange effectuer</a>
+                        </div>
                         </li>
+                    <?php } ?>
+                      
                     </ul>
                     <form class="form-inline mr-auto" target="_self">
                         <div class="form-group mb-0" style="/*margin-left: 235px;*/"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>

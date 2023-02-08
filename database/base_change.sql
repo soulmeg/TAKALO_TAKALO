@@ -112,10 +112,32 @@ group by categorie.id_categorie;
 
 
 create or replace view liste_objet as
-select objet.id_user,categorie.id_categorie,categorie.nom_categorie,objet.description_text,objet.prix
+select objet.id_objet,objet.id_user,categorie.id_categorie,categorie.nom_categorie,objet.description_text,objet.prix
 from photo
 join objet
 on photo.id_objet=objet.id_objet
 join categorie
 on objet.id_categorie=categorie.id_categorie
 group by categorie.id_categorie;
+
+
+-- LISTE DES OBJETS PAS A MOI
+
+select*
+from objet
+join photo 
+on objet.id_objet=photo.id_objet
+group by objet.id_user,objet.id_categorie;
+
+
+create or replace view notMyObject as
+select objet.id_objet,objet.id_user,categorie.nom_categorie,categorie.id_categorie,objet.description_text,objet.prix,photo.nom_photo
+from objet
+join photo 
+on objet.id_objet=photo.id_objet
+join categorie 
+on objet.id_categorie=categorie.id_categorie
+group by objet.id_user,categorie.id_categorie,categorie.nom_categorie;
+
+
+select*from notMyObject where id_user != 4;

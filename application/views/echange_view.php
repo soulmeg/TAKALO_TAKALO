@@ -24,25 +24,12 @@ $data=$this->session->userdata('user');
           
             <div class="container">
                 <div class="heading">
-                    <h2 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-top:60px;margin-bottom:60px">LISTE DE MES OBJETS</h2>
+                    <h2 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-top:60px;margin-bottom:60px">
+                    NOMBRE D'ECHANGE EFFECTUE </h2>
                 </div>
 
                 <div class="row">
-                
-                <?php for($i=0;$i<count($liste);$i++) {?>
-
-                    <div class="col-md-6 col-lg-4" style="border:inset;margin-left:170px;margin-bottom:40px">
-                        <div class="card border-0">
-                            <img class="card-img-top scale-on-hover" src="<?php echo base_url('assets/img/'.$liste[$i]['nom_photo']); ?>" alt="Card Image">
-                            <div class="card-body">
-                                <h6>Categorie : <a href="#"><?php echo $liste[$i]['nom_categorie'];?></a></h6>
-                                <p class="text-muted card-text">Prix : <?php echo $liste[$i]['prix'];?> $</p>
-                                <p class="text-muted card-text"><?php echo $liste[$i]['description_text'];?></p>
-                            </div>
-                        </div>
-                        <button style="border-color:white;margin-left:250px"><a href=>Modifier</button>
-                    </div>
-                <?php } ?>
+                <h5>Nombre d'echange effectue : <?php echo $echange;?></h5>
                 </div>
             </div>
         </section>
