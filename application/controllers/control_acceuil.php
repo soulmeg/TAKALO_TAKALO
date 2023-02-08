@@ -27,8 +27,11 @@ class control_acceuil extends CI_Controller {
         $data['categories'] = $this->Categorie_model->get_categories(null);
         $this->load->view('modifier',$data);
     }
-
-
+    public function add_categorie(){
+        $this->load->view('takalo/header');
+        $this->load->view('Categorie_form_insert_view');
+        $this->load->view('takalo/footer');
+    }
 }  
 ?>
   
