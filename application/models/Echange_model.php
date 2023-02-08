@@ -18,10 +18,6 @@ class Echange_model extends CI_Model{
         $this->db->query($sql);
     }
 
-    public function getProposition($id_objet){
-        
-    }
-
 
     
 

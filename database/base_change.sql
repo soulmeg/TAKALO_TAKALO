@@ -1,8 +1,3 @@
-drop database e_change;
-create database e_change;
-use e_change;
-
-
 create table user(
     id_user int primary key auto_increment,
      user_name varchar(30),
