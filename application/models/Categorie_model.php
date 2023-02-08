@@ -32,4 +32,12 @@ class Categorie_model extends CI_Model{
         $sql = "DELETE FROM categorie WHERE id_categorie = $id_categorie";
         $this->db->query($sql);        
     }
+    
+    public function recherche(){
+        $this->load->model("categorie_model");
+        $mot_cle = $this->input->post("mot_cle");
+        $id_categorie = $this->input->post("id_categorie");
+        $data = array();
+        $data['recherche'] = $this->categorie_model->recherche($mot_cle, $id_categorie); 
+    }
 }

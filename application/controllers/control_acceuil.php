@@ -57,6 +57,11 @@ class control_acceuil extends CI_Controller {
         $data['contents']='acceuil';
 		$this->load->view('takalo/template',$data);
     }
+    public function add_categorie(){
+        $this->load->view('takalo/header');
+        $this->load->view('Categorie_form_insert_view');
+        $this->load->view('takalo/footer');
+    }
 
 
 }  

@@ -10,4 +10,4 @@ class Photo_model extends CI_Model{
     }
 
     
-}
+}   
