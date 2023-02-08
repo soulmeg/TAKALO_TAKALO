@@ -16,6 +16,7 @@ $data=array();
 $objets=array();
 
 $data=$this->session->userdata('user');
+var_dump($data);
 
 ?>   
 <br>  
@@ -40,7 +41,11 @@ $data=$this->session->userdata('user');
                                 <p class="text-muted card-text"><?php echo $liste[$i]['description_text'];?></p>
                             </div>
                         </div>
-                        <button style="border-color:white;margin-left:250px"><a href=>Modifier</button>
+                        <button style="border-color:white;margin-left:250px">
+                            <a href="<?php echo base_url("objet_controller/get_form_update")?><?php echo "/".$liste[$i]['id_objet'];?>">
+                                Modifier
+                            </a>
+                        </button>
                     </div>
                 <?php } ?>
                 </div>

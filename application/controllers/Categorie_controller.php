@@ -28,7 +28,20 @@ class Categorie_controller extends CI_Controller{
         redirect("categorie_controller");
     } 
 
-    
+    public function get_form_insert(){
+        $this->load->view("categorie_form_insert_view");
+    }
+
+    public function insert(){
+        $nom_categorie = $this->input->post('categorie_name');
+        $this->categorie_model->insert_categorie($nom_categorie);
+        redirect("categorie_controller");
+    }
+
+    public function getCategories(){
+        $data['categories'] = $this->Categorie_model->get_categories(null);
+        $this->load->view('control',$data);
+    }
 
     
 }

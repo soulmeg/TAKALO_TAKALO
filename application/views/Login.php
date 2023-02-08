@@ -25,8 +25,8 @@
         <form method="post" action="<?php echo site_url('Login/process'); ?>">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-            <div class="form-group"><input class="form-control" type="text" name="user" placeholder="Email" value="megane@gmail.com"></div>
-            <div class="form-group"><input class="form-control" type="password" name="pass" placeholder="Password" value="meg"></div>
+            <div class="form-group"><input class="form-control" type="text" name="user" placeholder="Email" value="antonio@gmail.com"></div>
+            <div class="form-group"><input class="form-control" type="password" name="pass" placeholder="Password" value="okey"></div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
             <a class="forgot" href="<?php echo site_url('Login/signin'); ?>">Forgot your email or password?</a>
         </form>

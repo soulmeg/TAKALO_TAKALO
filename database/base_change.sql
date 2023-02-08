@@ -43,21 +43,33 @@ create table echange(
      id_objet_echange int,
      date_envoie datetime,
      date_acceptation datetime,
-
-    foreign key (id_objet_choix) references objet(id_objet),
-    foreign key (id_objet_echange) references objet(id_objet)
+     id_etat int,
+     foreign key (id_objet_choix) references objet(id_objet),
+     foreign key (id_objet_echange) references objet(id_objet),
+     foreign key (id_etat) references etat(id_etat)
 );
 
 create table etat(
      id_etat int primary key auto_increment,
      valeur int,
-    signe varchar(30)
-);
-create table confirmation(
-     id_confirmation int primary key auto_increment,
-     id_echange int
+     signe varchar(30)
 );
 
+
+
+create table confirmation(
+     id_confirmation int primary key auto_increment,
+     id_echange int,
+     id_etat int,
+     foreign key (id_echange) references echange(id_echange),
+     foreign key(id_etat) references etat(id_etat)
+);
+
+insert into etat values(null,0,'refuse');
+insert into etat values(null,10,'attente');
+insert into etat values(null,20,'accepte');
+
+insert into 
 insert into photo values(null,1,'image1.jpg');
 insert into photo values(null,1,'image2.jpg');
 insert into photo values(null,1,'image3.jpg');
@@ -96,16 +108,18 @@ where id_user=4;
 
 
 
-
+-- fvghbnjmk
 create or replace view liste_objet as
-select objet.id_user,categorie.id_categorie,categorie.nom_categorie,photo.nom_photo,objet.description_text,objet.prix
+
+select objet.id_objet,objet.id_user,categorie.id_categorie,categorie.nom_categorie,photo.nom_photo,objet.description_text,objet.prix
 from photo
 join objet
 on photo.id_objet=objet.id_objet
 join categorie
 on objet.id_categorie=categorie.id_categorie
+where id_user=3
 group by categorie.id_categorie;
-
+-- dfghjn
 
 
 
@@ -118,6 +132,7 @@ join objet
 on photo.id_objet=objet.id_objet
 join categorie
 on objet.id_categorie=categorie.id_categorie
+where id_user=1
 group by categorie.id_categorie;
 
 
@@ -131,13 +146,9 @@ group by objet.id_user,objet.id_categorie;
 
 
 create or replace view notMyObject as
-select objet.id_objet,objet.id_user,categorie.nom_categorie,categorie.id_categorie,objet.description_text,objet.prix,photo.nom_photo
-from objet
-join photo 
-on objet.id_objet=photo.id_objet
-join categorie 
-on objet.id_categorie=categorie.id_categorie
-group by objet.id_user,categorie.id_categorie,categorie.nom_categorie;
+
+
+select objet.id_objet,objet.id_user,categorie.nom_categorie,categorie.id_categorie,objet.description_text,objet.prix,photo.nom_photo from objet join photo on objet.id_objet=photo.id_objet join categorie on objet.id_categorie=categorie.id_categorie where id_user != %d group by objet.id_user,categorie.id_categorie,categorie.nom_categorie;
 
 
 select*from notMyObject where id_user != 4;
