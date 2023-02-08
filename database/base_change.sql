@@ -95,7 +95,15 @@ insert into objet values(null,2,2,'ciment(2 ciment holcim)',76.1);
 insert into objet values(null,3,3,'USB(lenovo 64GB)',25.2);
 insert into objet values(null,4,4,'echapment (v8 4T)',43.8);
 
-
+insert into photo values(null,1,'../assets/Camera Roll/kitro.jpg');
+insert into photo values(null,2,'../assets/Camera Roll/table.jpg');
+insert into photo values(null,3,'../assets/Camera Roll/galaxy.jpg');
+insert into photo values(null,4,'../assets/Camera Roll/filtre.jpg');
+insert into photo values(null,5,'../assets/Camera Roll/blouson.jpg');
+insert into photo values(null,6,'../assets/Camera Roll/ciment.jpg');
+insert into photo values(null,7,'../assets/Camera Roll/usb.jpg');
+insert into photo values(null,8,'../assets/Camera Roll/echppe.jpg');
+insert into 
 -- TENA IZYYYYYYYYY
 create or replace view photo_par_user as
 select objet.id_user,photo.nom_photo
