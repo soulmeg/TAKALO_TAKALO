@@ -15,6 +15,11 @@ class control_acceuil extends CI_Controller {
 		$this->load->view('takalo/template',$data);
     }
 
+    public function welcomee(){
+        $data['contents']='welcome';
+		$this->load->view('takalo/template',$data);
+    }
+
     public function EchangeUser($id){
         $data = array();
         $data['id_demander']=$this->input->post('id_objet_demander');

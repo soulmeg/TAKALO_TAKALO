@@ -24,7 +24,7 @@ $data=$this->session->userdata('user');
           
             <div class="container">
                 <div class="heading">
-                    <h2 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-top:60px;margin-bottom:60px">LISTE DE MES OBJETS</h2>
+                    <h2 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-bottom:60px">LISTE DE MES OBJETS</h2>
                 </div>
 
                 <div class="row">

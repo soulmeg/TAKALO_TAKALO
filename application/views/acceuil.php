@@ -23,9 +23,7 @@ $data=$this->session->userdata('user');
                         <div class="col-md-6 col-lg-4" style="width:300px;margin: 10px;margin-left:110px;border-radius: 20px;box-shadow: 0 2px 10px rgba(0,0,0,.1);">
                         <div class="card border-0"><a href="#" style="height: 50px;">User : <?php echo $liste['user_name'];?></a>
                         <a href="#" style="height: 50px;">Categorie : <?php echo $liste['nom_categorie']?></a>
-                        <a href="#">
-                            <img class="card-img-top scale-on-hover" src="assets/img/nature/<?php echo $liste['nom_photo'];?>" alt="Card Image">
-                        </a>
+                        
                             <div class="card-body">
                                 <h6>Email<a href="#"><?php echo $liste['user_email'];?></a></h6>
                                 <p class="text-muted card-text"> <?php echo $liste['description_text'];?></p>
