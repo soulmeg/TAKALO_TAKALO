@@ -25,8 +25,6 @@ class Login extends CI_Controller {
             //declaring session  
             $this->load->library('session');
             $this->session->set_userdata('user',$data);  
-            $tt='control_acceuil/allUtilisateur/'.$data[0]['id_user'];
-            var_dump($tt);
             redirect('control_acceuil/allUtilisateur/'.$data[0]['id_user']);       
         }  
         else{  
@@ -44,7 +42,6 @@ class Login extends CI_Controller {
         $data=$this->user->verifUser($mail,$pass);
         $this->load->library('session');
         $this->session->set_userdata('user',$data);  
-        // var_dump($data);
         redirect('control_acceuil/allUtilisateur/'.$data[0]['id_user']); 
     }       
 

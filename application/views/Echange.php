@@ -14,7 +14,6 @@
 <?php 
 $data=array();
 $objets=array();
-
 $data=$this->session->userdata('user');
 
 ?>   
@@ -24,12 +23,17 @@ $data=$this->session->userdata('user');
           
             <div class="container">
                 <div class="heading">
-                    <h2 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-top:60px;margin-bottom:60px">LISTE DE MES OBJETS</h2>
+                    <h5 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-top:60px;margin-bottom:60px">Vous voulez l'echanger avec quoi?</h5>
                 </div>
 
                 <div class="row">
                 
-                <?php for($i=0;$i<count($liste);$i++) {?>
+                <form action="<?php echo base_url('control_acceuil/insert_attente/'.$data[0]['id_user']);?>" method="post">
+                    <?php
+                for($i=0;$i<count($liste);$i++) {
+                    ?>        
+                    <input type="hidden" name="objet_demande" value="<?php echo $liste[$i]['id_objet'];?>">
+                    <input type="hidden" name="objet_demander" value="<?php echo $id_demander;?>">
 
                     <div class="col-md-6 col-lg-4" style="border:inset;margin-left:170px;margin-bottom:40px">
                         <div class="card border-0">
@@ -39,14 +43,11 @@ $data=$this->session->userdata('user');
                                 <p class="text-muted card-text">Prix : <?php echo $liste[$i]['prix'];?> $</p>
                                 <p class="text-muted card-text"><?php echo $liste[$i]['description_text'];?></p>
                             </div>
-                        </div>
-                        <button style="border-color:white;margin-left:250px">
-                            <a href="<?php echo base_url("objet_controller/get_form_update")?><?php echo "/".$liste[$i]['id_objet'];?>">
-                                Modifier
-                            </a>
-                        </button>
+                        </div>  
                     </div>
+                    <button style="border-color:white;margin-left:250px">Echanger</button>
                 <?php } ?>
+                </form>
                 </div>
             </div>
         </section>

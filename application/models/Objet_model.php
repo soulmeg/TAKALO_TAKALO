@@ -23,7 +23,6 @@ class Objet_model extends CI_Model{
         $objets=array();
         $sql = "select objet.id_objet,objet.id_user,categorie.nom_categorie,categorie.id_categorie,objet.description_text,objet.prix,photo.nom_photo from objet join photo on objet.id_objet=photo.id_objet join categorie on objet.id_categorie=categorie.id_categorie where id_user != %d group by objet.id_user,categorie.id_categorie,categorie.nom_categorie";
         $sql = sprintf($sql, $this->db->escape($id));
-        // var_dump($sql);
         $query = $this->db->query($sql);
         $objets =  $query->result_array();
         return $objets;
@@ -50,22 +49,13 @@ class Objet_model extends CI_Model{
         on objet.id_categorie=categorie.id_categorie
         where id_user=$id
         group by categorie.id_categorie";
-        // var_dump($sql);
         $sql = sprintf($sql, $this->db->escape($id));
         $query = $this->db->query($sql);
         $objets =  $query->result_array();
         return $objets;
     }
 
-    public function getPhotoParUser($id){
-        $objets=array();
-        $this->db->select('*');
-        $this->db->from('photo_par_user');
-        $this->db->where('id_user',$id);
-        $query = $this->db->get();
-        $row = $query->result_array();
-        return $row;
-    }
+
 
     public function update_objet($id_objet,$description_text, $prix){
         $sql = "UPDATE objet set description_text = %s, prix = %d WHERE id_objet = $id_objet";
@@ -108,5 +98,13 @@ class Objet_model extends CI_Model{
         $this->db->escape($prix));
 
         $this->db->query($sql);
+    }
+
+    public function getProposition_model($idUser){
+        $objets=array();
+        $sql="select* from echange join objet on echange.id_objet_echange=objet.id_objet join categorie on categorie.id_categorie=objet.id_categorie join photo on photo.id_objet=objet.id_objet join user on user.id_user=objet.id_user where objet.id_user=$idUser and id_etat=10";
+        $query = $this->db->query($sql);
+        $objets = $query -> row_array();
+        return $objets;
     }
 }

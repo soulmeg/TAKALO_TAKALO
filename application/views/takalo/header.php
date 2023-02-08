@@ -30,7 +30,7 @@
                         if($data[0]['est_admin']=='0'){?>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Liste de mes objets</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/notmyObject/'.$data[0]['id_user']);?>">Liste des objets echangeable</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/allUtilisateur/'.$data[0]['id_user']);?>">Mes propositions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('control_acceuil/getPoposition_controller/'.$data[0]['id_user']);?>">Mes propositions</a></li>
                     
                     <?php }
                     if($data[0]['est_admin']=='1') {?>

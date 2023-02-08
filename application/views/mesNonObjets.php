@@ -26,24 +26,29 @@ $data=$this->session->userdata('user');
                 <div class="heading">
                     <h2 style="font-size: 29px;font-family: cursive;color: rgb(24,55,122); text-align:center;margin-top:60px;margin-bottom:60px">LISTE DES OBJETS</h2>
                 </div>
-
+            <form action="<?php echo base_url('control_acceuil/EchangeUser/'.$data[0]['id_user']);?>" method="post">
                 <div class="row">
-                
-                <?php for($i=0;$i<count($liste);$i++) {?>
-
-                    <div class="col-md-6 col-lg-4" style="border:inset;margin-left:170px;margin-bottom:40px">
-                        <div class="card border-0">
-                            <img class="card-img-top scale-on-hover" src="<?php echo base_url('assets/img/'.$liste[$i]['nom_photo']); ?>" alt="Card Image">
-                            <div class="card-body">
-                                <h6>Categorie : <a href="#"><?php echo $liste[$i]['nom_categorie'];?></a></h6>
-                                <p class="text-muted card-text">Prix : <?php echo $liste[$i]['prix'];?> $</p>
-                                <p class="text-muted card-text"><?php echo $liste[$i]['description_text'];?></p>
+                    <?php for($i=0;$i<count($liste);$i++) {?>
+                        
+                        <div class="col-md-6 col-lg-4" style="border:inset;margin-left:170px;margin-bottom:40px">
+                            <div class="card border-0">
+                                <img class="card-img-top scale-on-hover" src="<?php echo base_url('assets/img/'.$liste[$i]['nom_photo']); ?>" alt="Card Image">
+                                <div class="card-body">
+                                    <input type="hidden" value="<?php echo $liste[$i]['id_objet'];?>" name="id_objet_demander">
+                                    <h6>Categorie : <a href="#"><?php echo $liste[$i]['nom_categorie'];?></a></h6>
+                                    <p class="text-muted card-text">Prix : <?php echo $liste[$i]['prix'];?> $</p>
+                                    <p class="text-muted card-text"><?php echo $liste[$i]['description_text'];?></p>
+                                </div>
                             </div>
+                            <input type="submit" value="Echanger avec" name="">
                         </div>
-                        <button style="border-color:white;margin-left:250px">Echanger avec</button>
-                    </div>
+                        <!-- <button style="border-color:white;margin-left:250px">
+                        <a href="<?php echo base_url('control_acceuil/EchangeUser/'.$liste[$i]['id_user']);?>">Echanger avec</a>
+                    </button> -->
                 <?php } ?>
                 </div>
+
+            </form>
             </div>
         </section>
     </main>
